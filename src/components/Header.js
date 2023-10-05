@@ -3,7 +3,7 @@ import NavBar from './NavBar';
 
 const Header = () =>{
     return(
-        <div>
+        <div class='bg-[#222]'>
         <NavBar/>
         </div>
     )   
