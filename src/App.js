@@ -25,7 +25,8 @@ function App() {
       <Card /> */}
       {/* <Main /> */}
       {/* {alert('Page Rendering')} */}
-      <Counter />
+      {/* <Counter /> */}
+      
     </div>
   );
 }

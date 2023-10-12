@@ -9,12 +9,14 @@ const Counter = () =>{
     }
 
     useEffect(() =>{
+        console.log('setting interval')
         const timer = setInterval(() =>setCount(count+1),5000);
 
         return(() =>{
+            console.log('clearing interval')
             clearInterval(timer);
         })
-    },[])
+    },[count])
 
     return(
         <div>
