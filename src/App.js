@@ -4,6 +4,11 @@ import Card from "./Card";
 import Main from './Main';
 import Counter from './Counter';
 
+function List(props){
+  const { multiple } = props;
+  return <li>{multiple}</li>;
+}
+
 function App() {
   // let [titleName,setTitleName] = useState('Hey Guys!!!');
 
@@ -18,6 +23,12 @@ function App() {
   // useEffect(() =>{
   //   alert('performing side effects')
   // },[counter1])
+
+  const [number,setNumber] = useState(0);
+  const mfactor = [1,2,3,4,5,6,7,8,9,10];
+
+  const multiples = mfactor.map((f) => f * number);
+
   return (
     <div>
       <Header class="bg-[#222]"/>
@@ -26,7 +37,11 @@ function App() {
       {/* <Main /> */}
       {/* {alert('Page Rendering')} */}
       {/* <Counter /> */}
-      
+      <input type="number" value={number} onChange={e => setNumber(e.target.value)} />
+      <ul>
+          {multiples.map(m => <li>{m}</li>)} //Any jsx element can be passed
+          {multiples.map(multiple => <List multiple ={multiple} />)} // Passing a custom component.
+      </ul>
     </div>
   );
 }
